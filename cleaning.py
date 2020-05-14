@@ -1,6 +1,38 @@
 import numpy as np
 import pandas as pd
 
+def import_data():
+    """This function acquires the weather data from GitHub and returns."""
+    
+    path1 = "https://raw.githubusercontent.com/datatest123/projects/master/2049724.csv"
+    path2 = "https://raw.githubusercontent.com/datatest123/projects/master/2069035.csv"
+    path3 = "https://raw.githubusercontent.com/datatest123/projects/master/2069038.csv"
+
+
+    fields = ['DATE',
+        'DailyAverageDryBulbTemperature',
+        'DailyAverageRelativeHumidity',
+        'DailyAverageStationPressure',
+        'DailyAverageWindSpeed',
+        'DailyDepartureFromNormalAverageTemperature',
+        'DailyMaximumDryBulbTemperature',
+        'DailyMinimumDryBulbTemperature',
+        'DailyPeakWindDirection',
+        'DailyPeakWindSpeed',
+        'DailyPrecipitation',
+        'DailySustainedWindDirection',
+        'DailySustainedWindSpeed',
+        'DailyWeather']
+
+    frame1 = pd.read_csv(path1, parse_dates=['DATE'], usecols=fields, dtype=str)
+    frame2 = pd.read_csv(path2, parse_dates=['DATE'], usecols=fields, dtype=str)
+    frame3 = pd.read_csv(path3, parse_dates=['DATE'], usecols=fields, dtype=str)
+
+    # Ignore index because each element is a list otherwise
+    big_frame = pd.concat([frame1, frame2, frame3], ignore_index=True) 
+    
+    return big_frame
+    
 def homogenize(data_frame_element):
     """This function deletes unwanted characters from strings."""
     
