@@ -2,11 +2,12 @@ import numpy as np
 import pandas as pd
 
 def import_data():
-    """This function acquires the weather data from GitHub and returns."""
+    """This function acquires the weather data from GitHub and returns a data frame
+    containing all the data."""
     
-    path1 = "https://raw.githubusercontent.com/datatest123/projects/master/2049724.csv"
-    path2 = "https://raw.githubusercontent.com/datatest123/projects/master/2069035.csv"
-    path3 = "https://raw.githubusercontent.com/datatest123/projects/master/2069038.csv"
+    path1 = "https://raw.githubusercontent.com/datatest123/weather/master/CSVs/2049724.csv"
+    path2 = "https://raw.githubusercontent.com/datatest123/weather/master/CSVs/2069035.csv"
+    path3 = "https://raw.githubusercontent.com/datatest123/weather/master/CSVs/2069038.csv"
 
 
     fields = ['DATE',
