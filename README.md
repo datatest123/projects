@@ -5,4 +5,5 @@ and GitHub should automatically display the notebooks in your browser. The data 
 folder, and the helper functions are stored in the "cleaning.py" file. You can also clone the repo and run 
 the notebooks on your computer if you have the Anaconda package installed. 
 
-The NOAA documentation is provided for reference. 
+The NOAA documentation is provided for reference in the "LCD_documentation.pdf" file. I used this information 
+to help me parse the raw data and to create categories in the PredictPrecip notebook. 
